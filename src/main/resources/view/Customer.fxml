@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Set the controller in Scene Builder: Controller panel > Controller class -->
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #F4F6F9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.swiftbanksystem.controller.CustomerController">
+   <children>
+<HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <children>
+
+      <!-- ===================== SIDEBAR ===================== -->
+      <VBox prefWidth="230.0" spacing="4.0" style="-fx-background-color: #0B2A4A;">
+         <padding>
+            <Insets bottom="16.0" left="14.0" right="14.0" top="18.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <StackPane prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #1FA37A; -fx-background-radius: 10;">
+                     <children>
+                        <Label text="⚡" textFill="WHITE">
+                           <style>-fx-font-size: 18px;</style>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <Label text="SwiftBank" textFill="WHITE">
+                     <style>-fx-font-size: 22px; -fx-font-weight: bold;</style>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="18.0" />
+               </VBox.margin>
+            </HBox>
+
+            <Label text="WORKSPACE" textFill="#8FA3BA">
+               <style>-fx-font-size: 10px;</style>
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" />
+               </VBox.margin>
+            </Label>
+
+            <Button fx:id="btnDashboard" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: transparent; -fx-text-fill: #C9D5E3; -fx-font-size: 13px; -fx-cursor: hand;" text="▦   Dashboard">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+            <Button fx:id="btnCustomers" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: #153A5F; -fx-background-radius: 8; -fx-border-color: #1FA37A; -fx-border-width: 0 0 0 3; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-cursor: hand;" text="☺   Customers">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+            <Button fx:id="btnAccounts" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: transparent; -fx-text-fill: #C9D5E3; -fx-font-size: 13px; -fx-cursor: hand;" text="▣   Accounts">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+            <Button fx:id="btnLoans" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: transparent; -fx-text-fill: #C9D5E3; -fx-font-size: 13px; -fx-cursor: hand;" text="⌂   Loans">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+            <Button fx:id="btnAtm" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: transparent; -fx-text-fill: #C9D5E3; -fx-font-size: 13px; -fx-cursor: hand;" text="▤   ATM Withdrawal">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+            <Button fx:id="btnCheques" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: transparent; -fx-text-fill: #C9D5E3; -fx-font-size: 13px; -fx-cursor: hand;" text="▢   Cheques">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+            <Button fx:id="btnTransactions" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: transparent; -fx-text-fill: #C9D5E3; -fx-font-size: 13px; -fx-cursor: hand;" text="⇄   Transactions">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+
+            <Region VBox.vgrow="ALWAYS" />
+
+            <VBox spacing="4.0" style="-fx-background-color: #123658; -fx-background-radius: 10;">
+               <padding>
+                  <Insets bottom="12.0" left="14.0" right="14.0" top="12.0" />
+               </padding>
+               <children>
+                  <Label text="CONNECTED BRANCH" textFill="#8FA3BA">
+                     <style>-fx-font-size: 10px;</style>
+                  </Label>
+                  <Label fx:id="lblBranch" text="Colombo Main · 001" textFill="WHITE">
+                     <style>-fx-font-size: 13px; -fx-font-weight: bold;</style>
+                  </Label>
+                  <Label text="●  All systems operational" textFill="#35C48F">
+                     <style>-fx-font-size: 10px;</style>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="14.0" />
+               </VBox.margin>
+            </VBox>
+
+            <Button fx:id="btnLogout" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="40.0" style="-fx-background-color: transparent; -fx-text-fill: #C9D5E3; -fx-font-size: 13px; -fx-cursor: hand;" text="⇦   Logout">
+               <padding><Insets left="14.0" /></padding>
+            </Button>
+            <Label text="SwiftBank Desktop  /  v2.4.0" textFill="#8FA3BA">
+               <style>-fx-font-size: 10px;</style>
+               <VBox.margin>
+                  <Insets left="4.0" top="6.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+
+      <!-- ===================== MAIN AREA ===================== -->
+      <VBox HBox.hgrow="ALWAYS">
+         <children>
+
+            <!-- Top bar -->
+            <HBox alignment="CENTER_LEFT" prefHeight="64.0" spacing="14.0" style="-fx-background-color: white; -fx-border-color: #E3E8EF; -fx-border-width: 0 0 1 0;">
+               <padding>
+                  <Insets left="22.0" right="22.0" />
+               </padding>
+               <children>
+                  <Label text="Workspace  /" textFill="#6B7A90">
+                     <style>-fx-font-size: 12px;</style>
+                  </Label>
+                  <Label text="Customers" textFill="#0B2A4A">
+                     <style>-fx-font-size: 12px; -fx-font-weight: bold;</style>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="lblDate" text="30 Oct 2026" textFill="#6B7A90">
+                     <style>-fx-font-size: 12px;</style>
+                  </Label>
+                  <Label text="🔔" textFill="#6B7A90" />
+                  <StackPane prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: #DFF3EC; -fx-background-radius: 8;">
+                     <children>
+                        <Label fx:id="lblInitials" text="MI" textFill="#1FA37A">
+                           <style>-fx-font-size: 12px; -fx-font-weight: bold;</style>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label fx:id="lblUserName" text="M INFAS" textFill="#0B2A4A">
+                           <style>-fx-font-size: 12px; -fx-font-weight: bold;</style>
+                        </Label>
+                        <Label fx:id="lblUserRole" text="Branch Administrator" textFill="#6B7A90">
+                           <style>-fx-font-size: 10px;</style>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Page content -->
+            <VBox spacing="16.0" VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+               </padding>
+               <children>
+
+                  <!-- Page header -->
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label text="Customer Management" textFill="#0B2A4A">
+                                 <style>-fx-font-size: 26px; -fx-font-weight: bold;</style>
+                              </Label>
+                              <Label text="Create and maintain your branch's customer records." textFill="#6B7A90">
+                                 <style>-fx-font-size: 12px;</style>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnExport" prefHeight="34.0" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6; -fx-text-fill: #0B2A4A; -fx-font-size: 12px; -fx-cursor: hand;" text="⭳   Export customers">
+                           <padding><Insets left="14.0" right="14.0" /></padding>
+                        </Button>
+                     </children>
+                  </HBox>
+
+                  <!-- Customer details card -->
+                  <VBox spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #E3E8EF; -fx-border-radius: 10;">
+                     <padding>
+                        <Insets bottom="16.0" left="18.0" right="18.0" top="16.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label text="Customer details" textFill="#0B2A4A">
+                                 <style>-fx-font-size: 15px; -fx-font-weight: bold;</style>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label fx:id="lblSelected" text="Selected record · CUS-00124" textFill="#6B7A90">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+                           </children>
+                        </HBox>
+
+                        <GridPane hgap="12.0" vgap="4.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="17.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="26.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="17.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="40.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="NEVER" />
+                              <RowConstraints vgrow="NEVER" />
+                              <RowConstraints vgrow="NEVER" />
+                              <RowConstraints vgrow="NEVER" />
+                           </rowConstraints>
+                           <children>
+                              <!-- Row 1 labels -->
+                              <Label text="Customer ID" textFill="#6B7A90" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+                              <Label text="Full Name" textFill="#6B7A90" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+                              <Label text="NIC" textFill="#6B7A90" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+                              <Label text="Date of Birth" textFill="#6B7A90" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+
+                              <!-- Row 1 fields -->
+                              <TextField fx:id="txtCustomerId" editable="false" prefHeight="34.0" promptText="CUS-00124" style="-fx-background-color: #EEF1F5; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtFullName" prefHeight="34.0" promptText="Full name" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtNic" prefHeight="34.0" promptText="NIC number" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="dpDob" maxWidth="1.7976931348623157E308" prefHeight="34.0" promptText="Select date" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                              <!-- Row 2 labels -->
+                              <Label text="Phone" textFill="#6B7A90" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                 <style>-fx-font-size: 11px;</style>
+                                 <GridPane.margin><Insets top="6.0" /></GridPane.margin>
+                              </Label>
+                              <Label text="Email" textFill="#6B7A90" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <style>-fx-font-size: 11px;</style>
+                                 <GridPane.margin><Insets top="6.0" /></GridPane.margin>
+                              </Label>
+                              <Label text="Address" textFill="#6B7A90" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                 <style>-fx-font-size: 11px;</style>
+                                 <GridPane.margin><Insets top="6.0" /></GridPane.margin>
+                              </Label>
+
+                              <!-- Row 2 fields -->
+                              <TextField fx:id="txtPhone" prefHeight="34.0" promptText="07X XXX XXXX" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6;" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtEmail" prefHeight="34.0" promptText="name@email.lk" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtAddress" prefHeight="34.0" promptText="Street, City" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+
+                        <!-- Buttons row -->
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                           <children>
+                              <Button fx:id="btnAdd" prefHeight="34.0" style="-fx-background-color: #1FA37A; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold; -fx-cursor: hand;" text="+   Add customer">
+                                 <padding><Insets left="16.0" right="16.0" /></padding>
+                              </Button>
+                              <Button fx:id="btnUpdate" prefHeight="34.0" style="-fx-background-color: #0B2A4A; -fx-background-radius: 6; -fx-text-fill: white; -fx-font-size: 12px; -fx-font-weight: bold; -fx-cursor: hand;" text="Update">
+                                 <padding><Insets left="16.0" right="16.0" /></padding>
+                              </Button>
+                              <Button fx:id="btnDelete" prefHeight="34.0" style="-fx-background-color: white; -fx-border-color: #D9534F; -fx-border-radius: 6; -fx-background-radius: 6; -fx-text-fill: #D9534F; -fx-font-size: 12px; -fx-font-weight: bold; -fx-cursor: hand;" text="Delete">
+                                 <padding><Insets left="16.0" right="16.0" /></padding>
+                              </Button>
+                              <Button fx:id="btnClear" prefHeight="34.0" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6; -fx-text-fill: #0B2A4A; -fx-font-size: 12px; -fx-font-weight: bold; -fx-cursor: hand;" text="Clear">
+                                 <padding><Insets left="16.0" right="16.0" /></padding>
+                              </Button>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label text="NIC must contain 12 digits or 9 digits + V / X" textFill="#6B7A90">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <!-- Customer register card -->
+                  <VBox spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #E3E8EF; -fx-border-radius: 10;" VBox.vgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label text="Customer register" textFill="#0B2A4A">
+                                 <style>-fx-font-size: 15px; -fx-font-weight: bold;</style>
+                              </Label>
+                              <Label fx:id="lblTotalCustomers" text="1,248 customers" textFill="#6B7A90">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <TextField fx:id="txtSearch" prefHeight="34.0" prefWidth="236.0" promptText="🔍  Search by name, ID or NIC" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6;" />
+                              <MenuButton fx:id="mbFilter" prefHeight="34.0" style="-fx-background-color: white; -fx-border-color: #D5DBE3; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 12px;" text="All customers">
+                                 <items>
+                                    <MenuItem fx:id="miAll" mnemonicParsing="false" text="All customers" />
+                                    <MenuItem fx:id="miRecent" mnemonicParsing="false" text="Recently added" />
+                                 </items>
+                              </MenuButton>
+                           </children>
+                        </HBox>
+
+                        <TableView fx:id="tblCustomers" prefHeight="230.0" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn fx:id="colCustomerId" prefWidth="110.0" text="CUSTOMER ID" />
+                              <TableColumn fx:id="colFullName" prefWidth="150.0" text="FULL NAME" />
+                              <TableColumn fx:id="colNic" prefWidth="130.0" text="NIC" />
+                              <TableColumn fx:id="colPhone" prefWidth="120.0" text="PHONE" />
+                              <TableColumn fx:id="colEmail" prefWidth="200.0" text="EMAIL" />
+                              <TableColumn fx:id="colCity" prefWidth="120.0" text="CITY" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+
+                        <HBox alignment="CENTER_LEFT" spacing="4.0">
+                           <children>
+                              <Label fx:id="lblShowing" text="Showing 1–4 of 1,248 customers" textFill="#6B7A90">
+                                 <style>-fx-font-size: 11px;</style>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnPrev" style="-fx-background-color: transparent; -fx-text-fill: #6B7A90; -fx-cursor: hand;" text="‹" />
+                              <Button fx:id="btnPage1" style="-fx-background-color: #1FA37A; -fx-background-radius: 4; -fx-text-fill: white; -fx-font-size: 11px; -fx-cursor: hand;" text="1" />
+                              <Button fx:id="btnPage2" style="-fx-background-color: transparent; -fx-text-fill: #0B2A4A; -fx-font-size: 11px; -fx-cursor: hand;" text="2" />
+                              <Button fx:id="btnPage3" style="-fx-background-color: transparent; -fx-text-fill: #0B2A4A; -fx-font-size: 11px; -fx-cursor: hand;" text="3" />
+                              <Label text="…" textFill="#6B7A90" />
+                              <Button fx:id="btnNext" style="-fx-background-color: transparent; -fx-text-fill: #6B7A90; -fx-cursor: hand;" text="›" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>
+   </children>
+</AnchorPane>
