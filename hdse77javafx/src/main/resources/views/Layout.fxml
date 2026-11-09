@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="1011.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="205.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/Screenshot_27-10-2026_1697_www.bing.com.jpeg" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: darkgreen;" text="Customer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="209.0" style="-fx-background-color: darkgreen;" text="Item" textFill="#f8f7f7">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="10.0" layoutY="258.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="209.0" style="-fx-background-color: darkgreen;" text="Order" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="3.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="62.0" prefWidth="769.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="                       Customer Management" wrappingWidth="475.1737365722656">
+                     <font>
+                        <Font name="Book Antiqua" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Label prefHeight="17.0" prefWidth="299.0" text="Customer Name" />
+            <TextField prefHeight="8.0" prefWidth="769.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextField>
+            <Label prefHeight="17.0" prefWidth="103.0" text="Customer Phone" />
+            <TextField />
+            <Label prefHeight="17.0" prefWidth="177.0" text="Customer Email" />
+            <TextField />
+            <Label prefHeight="17.0" prefWidth="141.0" text="Customer Address" />
+            <TextField />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
